@@ -9,36 +9,36 @@ namespace GenericsMaxProblem
     public class GenericClass<T> where T : IComparable
     {
 
-        T value1, value2, value3;
+        T firstValue, secondValue, thirdValue;
 
-        public GenericClass(T value1, T value2, T value3)
+        public GenericClass(T firstValue, T secondValue, T thirdValue)
         {
-            this.value1 = value1;
-            this.value2 = value2;
-            this.value3 = value3;
+            this.firstValue = firstValue;
+            this.secondValue = secondValue;
+            this.thirdValue = thirdValue;
         }
 
-        public static T MaxValue(T value1, T value2, T value3)
+        public static T MaxValue(T firstValue, T secondValue, T thirdValue)
         {
-            if (value1.CompareTo(value2) > 0 && value1.CompareTo(value3) > 0 ||
-               value1.CompareTo(value2) >= 0 && value1.CompareTo(value3) > 0 ||
-               value1.CompareTo(value2) > 0 && value1.CompareTo(value3) >= 0)
+            if (firstValue.CompareTo(secondValue) > 0 && firstValue.CompareTo(thirdValue) > 0 ||
+               firstValue.CompareTo(secondValue) >= 0 && firstValue.CompareTo(thirdValue) > 0 ||
+               firstValue.CompareTo(secondValue) > 0 && firstValue.CompareTo(thirdValue) >= 0)
             {
-                return value1;
+                return firstValue;
             }
-            if (value2.CompareTo(value1) > 0 && value2.CompareTo(value3) > 0 ||
-                value2.CompareTo(value1) >= 0 && value2.CompareTo(value3) > 0 ||
-                value2.CompareTo(value1) > 0 && value2.CompareTo(value3) >= 0)
+            if (secondValue.CompareTo(firstValue) > 0 && secondValue.CompareTo(thirdValue) > 0 ||
+                secondValue.CompareTo(firstValue) >= 0 && secondValue.CompareTo(thirdValue) > 0 ||
+                secondValue.CompareTo(firstValue) > 0 && secondValue.CompareTo(thirdValue) >= 0)
             {
-                return value2;
+                return secondValue;
             }
-            if (value3.CompareTo(value1) > 0 && value3.CompareTo(value2) > 0 ||
-                value3.CompareTo(value1) >= 0 && value3.CompareTo(value2) > 0 ||
-                value3.CompareTo(value1) > 0 && value3.CompareTo(value2) >= 0)
+            if (thirdValue.CompareTo(firstValue) > 0 && thirdValue.CompareTo(secondValue) > 0 ||
+                thirdValue.CompareTo(firstValue) >= 0 && thirdValue.CompareTo(secondValue) > 0 ||
+                thirdValue.CompareTo(firstValue) > 0 && thirdValue.CompareTo(secondValue) >= 0)
             {
-                return value3;
+                return thirdValue;
             }
-            return value1;
+            return firstValue;
         }
     }
 }
